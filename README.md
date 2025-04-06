@@ -16,7 +16,14 @@ A machine learning project that detects biased, offensive, or hateful language i
 
 ## 📁 Project Structure
 
-LanguageBiasDetector/ ├── data/ │ └── HateSpeechDatasetBalanced.csv │ ├── models/ │ ├── bias_detector_model.pkl │ └── vectorizer.pkl │ ├── src/ │ ├── init.py │ ├── preprocess.py │ ├── bias_suggester.py │ ├── train_model.py │ └── detect_api.py │ ├── venv/ │ ├── main.py ├── requirements.txt └── README.md
+LanguageBiasDetector/
+├── data/ │ └── HateSpeechDatasetBalanced.csv │ 
+├── models/ │ ├── bias_detector_model.pkl │ └── vectorizer.pkl │ 
+├── src/ │ ├── init.py │ ├── preprocess.py │ ├── bias_suggester.py │ ├── train_model.py │ └── detect_api.py │ 
+├── venv/  
+├── main.py 
+├── requirements.txt 
+└── README.md
 
 
 ---
