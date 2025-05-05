@@ -1,5 +1,7 @@
 pandas
-numpy
 scikit-learn
+imbalanced-learn
 nltk
 joblib
+matplotlib
+Pillow
