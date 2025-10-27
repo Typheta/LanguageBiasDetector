@@ -4,7 +4,7 @@ A machine learning project that detects biased, offensive, or hateful language i
 
 ---
 
-## 🚀 Features
+##  Features
 
 - Detects biased or offensive language in text
 - Provides suggested non-offensive replacements
@@ -14,7 +14,7 @@ A machine learning project that detects biased, offensive, or hateful language i
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 LanguageBiasDetector/
 ├── data/ │ └── HateSpeechDatasetBalanced.csv │ 
@@ -35,7 +35,7 @@ LanguageBiasDetector/
 
 ---
 
-## 🧑‍💻 Installation
+##  Installation
 
 ### 1. Clone the Repository
 
@@ -58,7 +58,7 @@ source venv/bin/activate
 
 4. Install Dependencies
 pip install -r requirements.txt
-📊 Training the Model
+📊Training the Model
 1. Download the dataset from Kaggle:
 🔗 Hate Speech Detection - Curated Dataset
 
@@ -66,7 +66,7 @@ Choose HateSpeechDatasetBalanced.csv and place it in the data/ folder.
 
 2. Train and save the model:
 python -m src.train_model
-✅ Testing with Input
+ Testing with Input
 Run the main script to enter a comment and get a prediction:
 
 
@@ -90,19 +90,19 @@ nltk
 
 joblib
 
-🌐 (Optional) Run as a Web API
+ (Optional) Run as a Web API
 Want to serve this as a web service? You can extend it using FastAPI.
 
 
 uvicorn src.detect_api:app --reload
 Then open http://127.0.0.1:8000/docs to test the API.
 
-🧠 Credits
+ Credits
 Developed by Jose Espino, Austin Caddell, Braeden McGarvey
 
 Dataset by waalbannyantudre on Kaggle
 
-📄 License
+ License
 MIT License – Use freely with credit.
 
 
