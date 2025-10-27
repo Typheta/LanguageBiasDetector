@@ -47,7 +47,7 @@ def train_and_save_model():
     X = df['cleaned']
     y = df['label']
 
-    print("🧹 Vectorizing text...")
+    print(" Vectorizing text...")
     vectorizer = TfidfVectorizer(stop_words='english')
     X_vec = vectorizer.fit_transform(X)
 
@@ -60,7 +60,7 @@ def train_and_save_model():
         X_resampled, y_resampled, test_size=0.2, random_state=42
     )
 
-    print("🔍 Running GridSearchCV for Logistic Regression...")
+    print(" Running GridSearchCV for Logistic Regression...")
     param_grid = {
         'C': [0.1, 1.0, 10],
         'solver': ['liblinear']
@@ -106,5 +106,6 @@ def train_and_save_model():
 
 if __name__ == "__main__":
     train_and_save_model()
+
 
 
