@@ -33,7 +33,7 @@ def clean_text(text):
     return " ".join(words)
 
 def train_and_save_model():
-    print("📁 Loading dataset...")
+    print(" Loading dataset...")
     dataset_path = "data/HateSpeechDatasetBalanced.csv"
     df = pd.read_csv(dataset_path)
 
@@ -51,11 +51,11 @@ def train_and_save_model():
     vectorizer = TfidfVectorizer(stop_words='english')
     X_vec = vectorizer.fit_transform(X)
 
-    print("📈 Applying SMOTE to balance classes...")
+    print(" Applying SMOTE to balance classes...")
     smote = SMOTE(random_state=42)
     X_resampled, y_resampled = smote.fit_resample(X_vec, y)
 
-    print("✂️ Splitting data...")
+    print(" Splitting data...")
     X_train, X_test, y_train, y_test = train_test_split(
         X_resampled, y_resampled, test_size=0.2, random_state=42
     )
@@ -69,13 +69,13 @@ def train_and_save_model():
     grid.fit(X_train, y_train)
     best_model = grid.best_estimator_
 
-    print("✅ Best model trained. Evaluating...")
+    print(" Best model trained. Evaluating...")
     y_pred = best_model.predict(X_test)
     report = classification_report(y_test, y_pred)
     roc_auc = roc_auc_score(y_test, best_model.predict_proba(X_test)[:, 1])
     cm = confusion_matrix(y_test, y_pred)
 
-    print("💾 Saving model and vectorizer...")
+    print(" Saving model and vectorizer...")
     os.makedirs("models", exist_ok=True)
     joblib.dump(best_model, "models/bias_detector_model.pkl")
     joblib.dump(vectorizer, "models/vectorizer.pkl")
@@ -85,7 +85,7 @@ def train_and_save_model():
         f.write(report)
         f.write(f"\nROC AUC: {roc_auc:.4f}\n")
 
-    print("📊 Saving ROC and Confusion Matrix plot...")
+    print(" Saving ROC and Confusion Matrix plot...")
     fig, axs = plt.subplots(1, 2, figsize=(12, 5))
 
     disp = ConfusionMatrixDisplay(confusion_matrix=cm)
@@ -102,8 +102,9 @@ def train_and_save_model():
 
     plt.tight_layout()
     plt.savefig("models/model_evaluation.png")
-    print("✅ Plot saved as: models/model_evaluation.png")
+    print(" Plot saved as: models/model_evaluation.png")
 
 if __name__ == "__main__":
     train_and_save_model()
+
 
